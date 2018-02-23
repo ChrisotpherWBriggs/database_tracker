@@ -1,0 +1,1 @@
+Claims.where("groupId = null")

@@ -1,0 +1,18 @@
+<h1>Users</h1>
+
+<table class="table-condensed">
+	<tr class="head">
+		<td class="view">First Name</td>
+		<td class="view">Last Name</td>
+		<td class="view">Email</td>
+		<td class="view">Password</td>
+	</tr>
+	<tr>
+		<% @users.each do |user| %>
+		<td class="view"><%= user.first_name %></td>
+		<td class="view"><%= user.last_name %></td>
+		<td class="view"><%= user.email %></td>
+		<td class="view"><%= user.password %></td>
+	</tr>
+	<% end %>
+</table>

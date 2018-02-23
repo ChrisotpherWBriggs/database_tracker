@@ -1,0 +1,21 @@
+<div style="padding-left: 50px;">
+  	<h1>Accumulator</h1> 
+<table style="padding-bottom: 25px;">
+<%= form_tag acresult_path, method: 'get' do %>
+	<tr>
+		<td align="right" style="padding-right: 20px;">Group Id:</td><td align="left"  colspan="3"><%= select_tag(:groupId, options_for_select([["Select A Group", 0], ["Leech Industries - 265", 265], ["Wellmont - 301", 301], ["Green Acres - 323", 323], ["West Virginia Newspaper - 329", 329], ["Russell County Schools - 382", 382], ["Walter Yoder - 390", 390], ["Plumbers & Steamfitters - 393", 393], ["McGee Heating - 396", 396], ["Alpine Sales - 397", 397], ["Dermatology Associates - 399", 399], ["Paramount Manufacturing - 406", 406], ["K Dolan - 407", 407], ["Istobal - 409", 409], ["Blue Ridge Radiology - 411", 411], ["Mountain Region - 412", 412], ["Dickenson County - 413", 413], ["Seco Warwick - 414", 414], ["Highlands Physicians - 415", 415], ["Eye Associates of South Indiana - 417", 417], ["NHM Constructor LLC - 419", 419], ["Alshred Services - 423", 423], ["Blaylock Plumbing - 425", 425], ["Kingsport Urology - 426", 426], ["Bristol Surgical - 428", 428], ["Yoder's Building Supply - 429", 429], ["Gastroenterology Associates - 430", 430], ["Palmetto Synthetics - 434", 434], ["Big Valley Seeding - 435", 435], ["High Q - 437", 437], ["Starnes INC - 439", 439], ["Handmaids of the Precious Blood - 445", 445], ["Hair Nails and Skin Care - 447", 447], ["Neal Enterprises - 448", 448], ["Falcon Farms - 449", 449], ["O'Dell Corp - 451", 451], ["Gateway Supply - 453", 453], ["Eye Centers of Louisville - 454", 454], ["Bondtex INC - 455", 455], ["Cross Schools - 456", 456], ["Blanton Supplies - 458", 458], ["Advanced Prosthetics - 459", 459], ["Community Pharmacy - 461", 461], ["D & C Trucking - 462", 462], ["MGC Mechanical - 463", 463], ["Tipperary Sales - 464", 464], ["Briggs Plumbing - 465", 465], ["Mountain Empire - 466", 466], ["Yeargin Potter Smith - 467", 467], ["Fedsec INC - 468", 468], ["Bobby Wood Chevrolet - 469", 469], ["Stealth Concealment - 470", 470], ["Moog Music - 471", 471], ["Blythewood Oil - 472", 472], ["Embroidery Solutions - 473", 473], ["Bluefield Cycles - 474", 474], ["Kwik Kafe - 475", 475], ["South Carolina Baptist - 476", 476], ["Food Country - 477", 477], ["Palmetto Prosthetics - 478", 478], ["Cleco - 479", 479], ["Overland INC - 480", 480], ["The Barter Foundation - 481", 481], ["Georgia Crown Distributing - 517", 517], ["Mach Mining - 750", 750], ["Highland Telephone - 755", 755], ["Cline Resources Development - 760", 760], ["Foresight Management - 763", 763], ["M Class Mining - 768", 768], ["Yellow Bush - 769", 769], ["Coal Field Construction", 771], ["Ringold Telephone - 778", 778], ["Patton Mining - 780", 780], ["Maryann Mining - 782", 782], ["Foresight Energy - 786", 786], ["LD Labor - 787", 787], ["Coalfield Repair - 789", 789], ["Cline Resources - 792", 792], ["Foresight Management - 793", 793], ["Cutlass Colliers - 794", 794], ["Greenway Mennonite - 795", 795], ["Goodwill Mennonite - 927", 927],])) %></td>
+	</tr>
+
+	<tr>	
+		<td align="right">Date From (yyyymmdd): </td><td align="left" colspan="3"><%= text_field_tag :sDateFrom, params[:sDateFrom] %></td>
+	</tr>
+	<tr>	
+		<td align="right">Date Through (yyyymmdd): </td><td align="left" colspan="3"><%= text_field_tag :sDateThrough, params[:sDateThrough] %></td>
+	</tr>
+	
+		<td colspan="4" align="center"><%= submit_tag "Search", class: "button" %></td>
+	</tr>
+
+<% end %>
+</table>
+</div>

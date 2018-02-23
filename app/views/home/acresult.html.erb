@@ -1,0 +1,35 @@
+<% if params[:sDateFrom].present? %>
+	<h1>Accumulator Results for <%= params[:sDateFrom] %> through <%= params[:sDateThrough] %></h1>
+<% else %>
+	<h1> Accumulator Results</h1>
+<% end %>
+
+<% if @accum.empty? %>
+	<h3>No Results Found</h3>
+<% end %>
+
+<div style="padding-top: 20px;">
+
+<table class="table-condensed">
+<tr class="head">
+	<td class="view" >Last Name</td>
+	<td class="view">First Name</td>
+	<td class="view">DOB</td>
+	<td class="view">Group ID</td>
+	<td class="view">Plan Paid</td>
+	<td class="view">Copay</td>
+	<td class="view">Total Paid</td>
+</tr>
+<tr>
+	<% @accum.each do |accum| %>
+		<td class="view"><%= accum.lName %></td>
+		<td class="view"><%= accum.fName %></td>
+		<td class="view"><%= accum.bDate %></td>
+		<td class="view"><%= accum.groupId %></td>
+		<td class="view"><%= number_to_currency(accum.planPaid.round(2)) %></td>
+		<td class="view"><%= number_to_currency(accum.coPay.round(2)) %></td>
+		<td class="view"><%= number_to_currency(accum.totalPaid.round(2)) %></td>
+</tr>
+<% end %>
+</table>
+</div>

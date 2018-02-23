@@ -1,0 +1,25 @@
+<h3> Create a User </h3>
+<table>
+	<tr>
+		<td><h3 class="text-danger" style="background-color: yellow;"><%= notice %></h3></td>
+	</tr>
+</table>
+<%= form_for :user do |f| %>
+<table class="table-condensed">
+	<tr>
+		<td>First name :</td> <td><%= f.text_field :first_name, :required => true %></td>
+	</tr>
+	<tr>
+		<td>Last name :</td> <td><%= f.text_field :last_name, :required => true %></td>
+	</tr>
+	<tr>
+		<td>Email :</td> <td><%= f.text_field :email, :required => true %></td>
+	</tr>
+	<tr>
+		<td>Password :</td> <td><%= f.password_field :password, :required => true %></td>
+	</tr>
+	<tr>
+		<td><%= f.submit class: "button"%></td>
+	</tr>
+</table>
+<% end %>

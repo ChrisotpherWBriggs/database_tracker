@@ -1,0 +1,20 @@
+
+<h3>Please Login</h3>
+
+<%= form_for(:session, url: login_path) do |f| %> 
+<table class="table-consensed">
+	<tr>
+		<td style="padding-bottom: 5px;"><%= f.email_field :email, :placeholder => "Email", :required => true %></td>
+	</tr>
+	<tr>
+		<td style="padding-bottom: 5px;"><%= f.password_field :password, :placeholder => "Password", :required => true %></td>
+	</tr>
+	<tr>
+		<td><%= f.submit "Log in", class: "button" %></td>
+	</tr>
+</table>
+<% end %>
+
+<h3> Dont Have a Login?</h3>
+
+<%= link_to "Sign Up", signup_path %> 
