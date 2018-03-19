@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', 'OptimClaims20180316.csv'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', '301optim20180316.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
-  t = Claim.new
+  t = Wellmont.new
   t.lName = row['lName']
   t.fName = row['fName']
   t.bDate = row['bDate']
