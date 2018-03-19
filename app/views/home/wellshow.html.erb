@@ -1,0 +1,65 @@
+<h1>Search Results for <%= params[:groupId] %></h1>
+
+<% if @claims.empty? %>
+	<h3>No Results Found</h3>
+<% end %>
+
+
+<div align="center">
+
+<%= form_tag wellshow_path(format: "csv"), method: 'get' do %>
+<%= hidden_field_tag :lName, params[:lName] %>
+<%= hidden_field_tag :fName, params[:fName] %>
+<%= hidden_field_tag :bDate, params[:bDate] %>
+<%= hidden_field_tag :groupId, params[:groupId] %>
+<%= hidden_field_tag :sDateFrom, params[:sDateFrom] %>
+<%= hidden_field_tag :sDateThrough, params[:sDateThrough] %>
+<%= submit_tag "Export", class: "button" %>
+<% end %>
+</div>
+
+<div algn="center">
+<%= will_paginate @claims %>
+</div>
+<div style="padding-top: 20px;">
+
+<table class="table-condensed">
+<tr class="head">
+	<td class="view"> ID</td>
+	<td class="view" >Last Name</td>
+	<td class="view">First Name</td>
+	<td class="view">DOB</td>
+	<td class="view">Group ID</td>
+	<td class="view">Submitted Date</td>
+	<td class="view">Drug Description</td>
+	<td class="view">Plan Paid</td>
+	<td class="view">Copay</td>
+	<td class="view">Total Paid</td>
+</tr>
+<tr>
+	<% @claims.each do |claim| %>
+		<td class="view"><%= claim.id %></td>
+		<td class="view"><%= claim.lName %></td>
+		<td class="view"><%= claim.fName %></td>
+		<td class="view"><%= claim.bDate %></td>
+		<td class="view"><%= claim.groupId %></td>
+		<td class="view"><%= claim.sDate %></td>
+		<td class="view"><%= claim.drug %></td>
+		<td class="view"><%= number_to_currency(claim.planPaid) %></td>
+		<td class="view"><%= number_to_currency(claim.coPay) %></td>
+		<td class="view"><%= number_to_currency(claim.totalPaid) %></td>
+	</tr>
+	<% end %>
+<tr>
+	<td class="view" colspan="7" style="text-align: center;"><b> Totals: </b></td>
+	<td class="view"><%= number_to_currency(@planSum) %></td>
+	<td class="view"><%= number_to_currency(@coSum) %></td>
+	<td class="view"><%= number_to_currency(@totalSum) %></td>
+</tr>
+
+
+</table>
+</div>
+<div align="center">
+	<%= will_paginate @claims %>
+</div>

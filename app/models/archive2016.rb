@@ -1,7 +1,7 @@
 class Archive2016 < ApplicationRecord
 require 'csv'
-
 	
+
 	def self.to_csv(options = {})
     CSV.generate(options) do |csv|
     	columns = %w(lName fName bDate groupId sDate drug planPaid coPay totalPaid)

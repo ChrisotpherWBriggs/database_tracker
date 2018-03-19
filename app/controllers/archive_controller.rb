@@ -12,6 +12,11 @@ end
 
 def show2016
 
+		if params[:sDateFrom].present? && params[:sDateFrom].to_i < 20160101 || params[:sDateThrough].to_i > 20161231
+			flash[:danger] = "Date Range Must Be Between 20160101 and 20161231"	
+			redirect_to search2016_path
+		end
+
 		if params[:sDateFrom].present?
 			filenNameVar = params[:groupId] + "_" + params[:sDateFrom] + "-" + params[:sDateThrough] + "_details"
 		else
@@ -33,7 +38,7 @@ def show2016
 		if params[:sDateFrom].present?
 			@order = @order.where(sDate: params[:sDateFrom] .. params[:sDateThrough])
 		end
-		
+
 		
 		@claims = @order.where("lName LIKE ? AND fName LIKE ? AND groupId LIKE ? AND bDate LIKE ?", lNameResult, fNameResult, groupIdResult, bDateResult)
 			respond_to do |format|
@@ -43,6 +48,7 @@ def show2016
 		@planSum = @claims.sum(:planPaid)
 		@coSum = @claims.sum(:coPay)
 		@totalSum = @claims.sum(:totalPaid)
+		
 	end
 
 	def accum
@@ -50,6 +56,11 @@ def show2016
 	end
 
 	def acresult2016
+
+		if params[:sDateFrom].present? && params[:sDateFrom].to_i < 20160101 || params[:sDateThrough].to_i > 20161231
+			flash[:danger] = "Date Range Must Be Between 20160101 and 20161231"	
+			redirect_to search2016_path
+		end
 
 		if params[:sDateFrom].present?
 			filenNameVar = params[:groupId] + "_" + params[:sDateFrom] + "-" + params[:sDateThrough] + "_Accumulator"
@@ -79,6 +90,11 @@ def show2016
 	end
 
 	def show2017
+
+		if params[:sDateFrom].present? && params[:sDateFrom].to_i < 20170101 || params[:sDateThrough].to_i > 20171231
+			flash[:danger] = "Date Range Must Be Between 20170101 and 20171231"	
+			redirect_to search2017_path
+		end
 
 		if params[:sDateFrom].present?
 			filenNameVar = params[:groupId] + "_" + params[:sDateFrom] + "-" + params[:sDateThrough] + "_details"
@@ -118,6 +134,11 @@ def show2016
 	end
 
 	def acresult2017
+
+		if params[:sDateFrom].present? && params[:sDateFrom].to_i < 20170101 || params[:sDateThrough].to_i > 20171231
+			flash[:danger] = "Date Range Must Be Between 20170101 and 20171231"	
+			redirect_to search2017_path
+		end
 
 		if params[:sDateFrom].present?
 			filenNameVar = params[:groupId] + "_" + params[:sDateFrom] + "-" + params[:sDateThrough] + "_Accumulator"

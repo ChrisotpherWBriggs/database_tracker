@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'csv'
 
-csv_text = File.read(Rails.root.join('lib', 'seeds', '20180301SYLoad.csv'))
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'OptimClaims20180316.csv'))
 csv = CSV.parse(csv_text, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
   t = Claim.new
@@ -25,4 +25,4 @@ csv.each do |row|
   puts "#{t.lName}, #{t.fName}, #{t.bDate}, #{t.groupId}, #{t.sDate}, #{t.drug}, #{t.planPaid}, #{t.coPay}, #{t.totalPaid} saved"
 end
 
-puts "There are now #{Claim.count} rows in the Claims table"
+puts "There are now #{Wellmont.count} rows in the Wellmont table"
