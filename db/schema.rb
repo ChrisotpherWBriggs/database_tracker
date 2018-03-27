@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312103358) do
+ActiveRecord::Schema.define(version: 20180327142536) do
 
   create_table "archive2016s", force: :cascade do |t|
     t.string "lName"
@@ -66,9 +66,9 @@ ActiveRecord::Schema.define(version: 20180312103358) do
   create_table "wellmonts", force: :cascade do |t|
     t.string "lName"
     t.string "fName"
-    t.integer "bDate"
+    t.string "bDate"
     t.integer "groupId"
-    t.integer "sDate"
+    t.string "sDate"
     t.string "drug"
     t.decimal "planPaid"
     t.decimal "coPay"
