@@ -21,12 +21,21 @@ require 'csv'
 			filenNameVar = params[:groupId] + "_details"
 		end
 
+		bDate = params[:bYear].to_s + params[:bMonth].to_s + params[:bDay].to_s
+		bDate.to_i
+
+		sDateFrom = params[:sYearF].to_s + params[:sMonthF].to_s + params[:sDayF].to_s
+		sDateFrom.to_i
+
+		sDateThrough = params[:sYearT].to_s + params[:sMonthT].to_s + params[:sDayT].to_s
+		sDateThrough
+
 		lNameResult = "%" + params[:lName] + "%"
 		fNameResult = "%" + params[:fName] + "%"
 		groupIdResult = "%" + params[:groupId] + "%"
-		bDateResult = "%" + params[:bDate] + "%"
-		sDateFromResult = "%" + params[:sDateFrom] + "%"
-		sDateThroughResult = "%" + params[:sDateThrough] + "%"
+		bDateResult = "%" + bDate + "%"
+		sDateFromResult = "%" + sDateFrom + "%"
+		sDateThroughResult = "%" + sDateThrough + "%"
 
 
 		@order = Claim.order(:lName)
@@ -73,7 +82,7 @@ require 'csv'
 		end
 
 		
-		@accum = @order.where("groupId LIKE ?", groupIdResult).group(:lname, :fName, :bDate).select("lName, fName, bDate, groupId, SUM(planPaid) as planPaid, SUM(coPay) as coPay, SUM(totalPaid) as totalPaid")
+		@accum = @order.where("groupId LIKE ?", groupIdResult).group(:lname, :fName, :bDate).select("lName, fName, birth_date, groupId, SUM(planPaid) as planPaid, SUM(coPay) as coPay, SUM(totalPaid) as totalPaid")
 		@export = @accum
 			respond_to do |format|
 				format.html
@@ -189,7 +198,7 @@ require 'csv'
 		end
 
 		
-		@accum = @order.where("groupId LIKE ?", groupIdResult).group(:lname, :fName, :bDate).select("lName, fName, bDate, groupId, SUM(planPaid) as planPaid, SUM(coPay) as coPay, SUM(totalPaid) as totalPaid")
+		@accum = @order.where("groupId LIKE ?", groupIdResult).group(:lname, :fName, :bDate).select("lName, fName, birth_date, groupId, SUM(planPaid) as planPaid, SUM(coPay) as coPay, SUM(totalPaid) as totalPaid")
 		@export = @accum
 			respond_to do |format|
 				format.html

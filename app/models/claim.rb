@@ -1,10 +1,11 @@
 class Claim < ApplicationRecord
+
 require 'csv'
 
 	
 	def self.to_csv(options = {})
     CSV.generate(options) do |csv|
-    	columns = %w(lName fName bDate groupId sDate drug planPaid coPay totalPaid)
+    	columns = %w(lName fName birth_date groupId service_date drug planPaid coPay totalPaid)
       csv << columns
       all.each do |product|
         csv << product.attributes.values_at(*columns)
@@ -15,7 +16,7 @@ require 'csv'
 
 def self.ac_to_csv(options = {})
     CSV.generate(options) do |csv|
-    	columns = %w(lName fName bDate groupId planPaid coPay totalPaid)
+    	columns = %w(lName fName birth_date groupId planPaid coPay totalPaid)
       csv << columns
       all.each do |product|
         csv << product.attributes.values_at(*columns)

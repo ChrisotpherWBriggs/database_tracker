@@ -1,0 +1,13 @@
+    <h1>Claim Edit</h1> 
+  <table style="padding-bottom: 10px;">
+    <%= form_tag edit_path, method: 'get' do %>
+  <tr>
+    <td>Enter Claim Numnber</td>
+    <td align="right" style="padding-right: 20px;">Enter Claim Number: </td>
+    <td align="left" colspan="3"><%= text_field_tag :id, params[:id], :required => true %></td>
+    </tr>
+    <tr>
+    <td><%= submit_tag "Submit", class: "button" %></td>
+    </tr>
+    <% end %>
+</table>

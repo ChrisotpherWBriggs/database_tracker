@@ -1,0 +1,9 @@
+<%= form_tag show_path(format: "csv"), method: 'get' do %>
+<%= hidden_field_tag :lName, params[:lName] %>
+<%= hidden_field_tag :fName, params[:fName] %>
+<%= hidden_field_tag :bDate, params[:bDate] %>
+<%= hidden_field_tag :groupId, params[:groupId] %>
+<%= hidden_field_tag :sDateFrom, params[:sDateFrom] %>
+<%= hidden_field_tag :sDateThrough, params[:sDateThrough] %>
+<%= submit_tag "Export", class: "button" %>
+<% end %>

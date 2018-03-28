@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327142536) do
+ActiveRecord::Schema.define(version: 20180328133055) do
 
   create_table "archive2016s", force: :cascade do |t|
     t.string "lName"
@@ -43,15 +43,17 @@ ActiveRecord::Schema.define(version: 20180327142536) do
   create_table "claims", force: :cascade do |t|
     t.string "lName"
     t.string "fName"
-    t.string "bDate"
+    t.date "bDate"
     t.integer "groupId"
-    t.string "sDate"
+    t.date "sDate"
     t.string "drug"
     t.decimal "planPaid"
     t.decimal "coPay"
     t.decimal "totalPaid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "birth_date"
+    t.string "service_date"
   end
 
   create_table "users", force: :cascade do |t|
@@ -66,15 +68,17 @@ ActiveRecord::Schema.define(version: 20180327142536) do
   create_table "wellmonts", force: :cascade do |t|
     t.string "lName"
     t.string "fName"
-    t.string "bDate"
+    t.integer "bDate"
     t.integer "groupId"
-    t.string "sDate"
+    t.integer "sDate"
     t.string "drug"
     t.decimal "planPaid"
     t.decimal "coPay"
     t.decimal "totalPaid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "bDate2"
+    t.string "sDate2"
   end
 
 end

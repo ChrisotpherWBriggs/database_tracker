@@ -38,7 +38,7 @@
 	<% @accum.each do |accum| %>
 		<td class="view"><%= accum.lName %></td>
 		<td class="view"><%= accum.fName %></td>
-		<td class="view"><%= accum.bDate %></td>
+		<td class="view"><%= accum.birth_date %></td>
 		<td class="view"><%= accum.groupId %></td>
 		<td class="view"><%= number_to_currency(accum.planPaid.round(2)) %></td>
 		<td class="view"><%= number_to_currency(accum.coPay.round(2)) %></td>

@@ -1,0 +1,43 @@
+    <h1>Claim Data</h1> 
+<table style="padding-bottom: 10px;">
+<%= form_tag new_path, method: 'post' do %>
+  <tr>
+    <td align="right" style="padding-right: 20px;">Last Name:</td><td align="left" colspan="3"><%= text_field_tag :lName, params[:lName], :required => true %></td>
+  </tr>
+  
+  <tr>
+    <td align="right" style="padding-right: 20px;">First Name:</td><td align="left" colspan="3"><%= text_field_tag :fName, params[:fName], :required => true %></td>
+  </tr>
+
+  <tr>
+    <td align="right" style="padding-right: 20px;">DOB (mm/dd/yyyy):</td><td align="left" colspan="3"><%= date_field_tag :bDate, params[:bDate], :required => true %></td>
+  </tr>
+
+  <tr>
+    <td align="right" style="padding-right: 20px;">Group Id:</td><td align="left" colspan="3"><%= text_field_tag :groupId, params[:groupId], :required => true %></td>
+  </tr>
+
+  <tr>  
+    <td align="right" style="padding-right: 20px;">Submitted Date(mm/dd/yyyy): </td><td align="left" colspan="3"><%= date_field_tag :sDate, params[:sDate], :required => true %></td>
+  </tr>
+  <tr>  
+    <td align="right" style="padding-right: 20px;">Drug: </td><td align="left" colspan="3"><%= text_field_tag :drug, params[:drug], :required => true %></td>
+  </tr>
+
+  <tr>  
+    <td align="right" style="padding-right: 20px;">Plann Paid </td><td align="left" colspan="3"><%= text_field_tag :planPaid, params[:planPaid], :required => true %></td>
+  </tr>
+  
+    <tr>  
+    <td align="right" style="padding-right: 20px;">Co Pay </td><td align="left" colspan="3"><%= text_field_tag :coPay, params[:coPay], :required => true %></td>
+  </tr>
+  
+    <tr>  
+    <td align="right" style="padding-right: 20px;">Total Paid </td><td align="left" colspan="3"><%= text_field_tag :totalPaid, params[:totalPaid], :required => true %></td>
+  </tr>
+    
+    <td colspan="4" align="center"><%= submit_tag "Create", class: "button" %></td>
+  </tr>
+
+<% end %>
+</table>
