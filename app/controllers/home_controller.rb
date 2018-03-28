@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 
 before_action :require_user
 
+
 require 'csv'
 	def index
 
@@ -20,22 +21,13 @@ require 'csv'
 		else
 			filenNameVar = params[:groupId] + "_details"
 		end
-
-		bDate = params[:bYear].to_s + params[:bMonth].to_s + params[:bDay].to_s
-		bDate.to_i
-
-		sDateFrom = params[:sYearF].to_s + params[:sMonthF].to_s + params[:sDayF].to_s
-		sDateFrom.to_i
-
-		sDateThrough = params[:sYearT].to_s + params[:sMonthT].to_s + params[:sDayT].to_s
-		sDateThrough
-
+		
 		lNameResult = "%" + params[:lName] + "%"
 		fNameResult = "%" + params[:fName] + "%"
 		groupIdResult = "%" + params[:groupId] + "%"
-		bDateResult = "%" + bDate + "%"
-		sDateFromResult = "%" + sDateFrom + "%"
-		sDateThroughResult = "%" + sDateThrough + "%"
+		bDateResult = "%" + params[:bDate] + "%"
+		sDateFromResult = "%" + params[:sDateFrom] + "%"
+		sDateThroughResult = "%" + params[:sDateThrough] + "%"
 
 
 		@order = Claim.order(:lName)
