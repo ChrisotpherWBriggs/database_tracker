@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'wellmont' => 'home#wellmont', as: 'wellmont'
   get 'wellshow' => 'home#wellshow', as: 'wellshow'
   get 'wellacresult' => 'home#wellacresult', as: 'wellacresult'
+  
   get 'archive' => 'archive#archive', as: 'archive'
   get 'search2016' => 'archive#search2016', as: 'search2016'
   get 'search2017' => 'archive#search2017', as: 'search2017'
