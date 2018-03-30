@@ -1,0 +1,24 @@
+  	<h1>Detailed Search Wellmont</h1> 
+<table style="padding-bottom: 10px;">
+<%= form_tag wellshow_path	, method: 'get' do %>
+	<tr>
+		<td align="right" style="padding-right: 20px;">Last Name: </td><td align="left" colspan="3"><%= text_field_tag :lName, params[:lName] %></td>
+	</tr>
+	<tr>	
+		<td align="right" style="padding-right: 20px;">First Name: </td><td align="left" colspan="3"><%= text_field_tag :fName, params[:fName] %></td>
+	</tr>
+	<tr>	
+		<td align="right" style="padding-right: 20px;">DOB: </td><td align="left" colspan="3"><%= date_field_tag :bDate, params[:bDate] %></td>
+	</tr>
+	<tr>	
+		<td align="right" style="padding-right: 20px;">Date From (yyyymmdd): </td><td align="left" colspan="3"><%= date_field_tag :sDateFrom, params[:sDateFrom] %></td>
+	</tr>
+	<tr>	
+		<td align="right" style="padding-right: 20px;">Date Through (yyyymmdd): </td><td align="left" colspan="3"><%= date_field_tag :sDateThrough, params[:sDateThrough] %></td>
+	</tr>
+	
+		<td colspan="4" align="center"><%= submit_tag "Search", class: "button" %></td>
+	</tr>
+
+<% end %>
+</table>

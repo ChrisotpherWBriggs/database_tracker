@@ -1,37 +1,8 @@
-<h1>New Claim</h1>
 
-<% @claims.each do |claim| %>
-<h3> Claim Id Number <%= claim.id %> Has Been Created. </h3>
-<% end %>
+<h2>Claim Created</h2>
 
-<div style="padding-top: 20px;">
+<%= render 'home/display' %>
 
-
-<table class="table-condensed">
-<tr class="head">
-	<td class="view"> ID</td>
-	<td class="view" >Last Name</td>
-	<td class="view">First Name</td>
-	<td class="view">DOB</td>
-	<td class="view">Group ID</td>
-	<td class="view">Submitted Date</td>
-	<td class="view">Drug Description</td>
-	<td class="view">Plan Paid</td>
-	<td class="view">Copay</td>
-	<td class="view">Total Paid</td>
-</tr>
-<tr>
-	<% @claims.each do |claim| %>
-		<td class="view"><%= claim.id %></td>
-		<td class="view"><%= claim.lName %></td>
-		<td class="view"><%= claim.fName %></td>
-		<td class="view"><%= claim.bDate %></td>
-		<td class="view"><%= claim.groupId %></td>
-		<td class="view"><%= claim.sDate %></td>
-		<td class="view"><%= claim.drug %></td>
-		<td class="view"><%= number_to_currency(claim.planPaid) %></td>
-		<td class="view"><%= number_to_currency(claim.coPay) %></td>
-		<td class="view"><%= number_to_currency(claim.totalPaid) %></td>
-	</tr>
-	<% end %>
-</table>
+<div style="padding-top 20 px;">
+	<%= link_to "Home", root_path, class: "button" %>
+</div>

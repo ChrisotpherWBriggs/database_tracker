@@ -3,18 +3,17 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get 'show' => 'home#show', as: 'show'
-  get 'search' => 'home#search', as: 'search'
-  get 'accum' => 'home#accum', as: 'accum'
   get 'acresult' => 'home#acresult', as: 'acresult'
   get 'edit' => 'home#edit', as: 'edit'  
   get 'deletenull' => 'home#deletenull', as: 'deletenull' 
   post 'update' => 'home#update', as: 'update'
   post 'new' =>	'home#new', as: 'new'
   post 'delete' => 'home#delete', as: 'delete'
-  get 'backup' => 'home#backup', as: 'backup'
-  get 'wellmont' => 'home#wellmont', as: 'wellmont'
-  get 'wellshow' => 'home#wellshow', as: 'wellshow'
-  get 'wellacresult' => 'home#wellacresult', as: 'wellacresult'
+  
+  
+  get 'wellmont' => 'wellmont#wellmont', as: 'wellmont'
+  get 'wellshow' => 'wellmont#wellshow', as: 'wellshow'
+  get 'wellacresult' => 'wellmont#wellacresult', as: 'wellacresult'
   
   get 'archive' => 'archive#archive', as: 'archive'
   get 'search2016' => 'archive#search2016', as: 'search2016'
